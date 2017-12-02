@@ -1,12 +1,10 @@
 package advent
 
 import (
-"fmt"
 "strconv"
 )
 
 func CalcCaptcha(captcha string, step int)(int){
-	fmt.Println("December 1")
 
 	position := 0
 	nextPosition := 0
