@@ -6,11 +6,11 @@ import (
 
 func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bool) {
 	step := 1
-	if (longStep) {
-		step = len(inputString) / 2;
+	if longStep {
+		step = len(inputString) / 2
 	}
 	value := CalcCaptcha(inputString, step)
-	if (value != expected) {
+	if value != expected {
 		t.Errorf("Fail : expected %d", expected)
 	}
 }
@@ -34,4 +34,3 @@ func TestAdvent(t *testing.T) {
 	testCalcCaptcha(t, inputValue, 1177, false)
 	testCalcCaptcha(t, inputValue, 1060, true)
 }
-

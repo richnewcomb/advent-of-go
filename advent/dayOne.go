@@ -1,10 +1,10 @@
 package advent
 
 import (
-"strconv"
+	"strconv"
 )
 
-func CalcCaptcha(captcha string, step int)(int){
+func CalcCaptcha(captcha string, step int) int {
 
 	position := 0
 	nextPosition := 0
@@ -13,17 +13,17 @@ func CalcCaptcha(captcha string, step int)(int){
 	checkSum := 0
 
 	for position < len(captcha) {
-		currentValue, _ = strconv.Atoi(string(captcha[position]));
-		if (position + step < len(captcha)) {
-			nextPosition = position + step;
+		currentValue, _ = strconv.Atoi(string(captcha[position]))
+		if position+step < len(captcha) {
+			nextPosition = position + step
 		} else {
-			nextPosition = (position + step) - len(captcha);
+			nextPosition = (position + step) - len(captcha)
 		}
-		nextValue, _ = strconv.Atoi(string(captcha[nextPosition]));
-		if (currentValue == nextValue) {
-			checkSum += currentValue;
+		nextValue, _ = strconv.Atoi(string(captcha[nextPosition]))
+		if currentValue == nextValue {
+			checkSum += currentValue
 		}
-		position++;
+		position++
 	}
-	return checkSum;
+	return checkSum
 }
