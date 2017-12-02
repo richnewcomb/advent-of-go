@@ -2,6 +2,7 @@ package advent
 
 import (
 	"testing"
+	"github.com/stretchr/testify/assert"
 )
 
 func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bool) {
@@ -10,9 +11,7 @@ func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bo
 		step = len(inputString) / 2
 	}
 	value := CalcCaptcha(inputString, step)
-	if value != expected {
-		t.Errorf("Fail : expected %d", expected)
-	}
+	assert.Equal(t, expected, value, "Result does not match expected.")
 }
 
 func TestSingleSteps(t *testing.T) {
