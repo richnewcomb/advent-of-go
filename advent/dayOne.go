@@ -7,7 +7,6 @@ import (
 
 func CalcCaptcha(captcha string, step int)(int){
 	fmt.Println("December 1")
-	fmt.Println(captcha);
 
 	position := 0
 	nextPosition := 0
