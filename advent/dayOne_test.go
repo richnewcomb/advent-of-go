@@ -2,7 +2,6 @@ package advent
 
 import (
 	"testing"
-	"fmt"
 )
 
 func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bool) {
@@ -11,7 +10,6 @@ func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bo
 		step = len(inputString) / 2;
 	}
 	value := CalcCaptcha(inputString, step)
-	fmt.Println(value);
 	if (value != expected) {
 		t.Errorf("Fail : expected %d", expected)
 	}
