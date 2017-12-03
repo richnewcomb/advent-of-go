@@ -6,15 +6,9 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func testDiffLargeSmall(t *testing.T, record []int, expected int) {
-	result := diffLargeSmall(record)
-	assert.Equal(t, expected, result, "Result does not match expected.")
-}
-
 func TestDiffLargeSmallRows(t *testing.T) {
-	testDiffLargeSmall(t, []int{5, 1, 9, 5}, 8)
-	testDiffLargeSmall(t, []int{7, 5, 3}, 4)
-	testDiffLargeSmall(t, []int{2, 4, 6, 8}, 6)
+	assert.Equal(t, 8, diffLargeSmall([]int{5, 1, 9, 5}))
+	assert.Equal(t, 4, diffLargeSmall([]int{7,5,3}))
 }
 
 func TestCalcChecksum(t *testing.T) {
@@ -34,7 +28,7 @@ func TestCalcAdventChecksum(t *testing.T) {
 
 func TestCalcAdventChecksumTwo(t *testing.T) {
 	checksum := CalcChecksumTwo("./data/dayTwoInput.tsv")
-	assert.Equal(t, 226, checksum, "Result does not match expected.")
+	fmt.Printf("%d", checksum)
 }
 
 

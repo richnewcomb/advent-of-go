@@ -36,7 +36,7 @@ func ReadTsvRecordsToInt(filename string) [][]int {
 	for i:= 0; i < len(strRecords); i++ {
 		records = append(records, make([]int, len(strRecords[i])))
 		for j:=0; j < len(strRecords[i]); j++ {
-			records[i][j], _ = strconv.Atoi(strRecords[i][j])  // the error handling is certainly bad
+			records[i][j], _ = strconv.Atoi(strRecords[i][j])  // this error handling is certainly bad
 		}
 	}
 	return records
