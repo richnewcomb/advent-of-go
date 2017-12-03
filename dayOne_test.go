@@ -11,7 +11,7 @@ func testCalcCaptcha(t *testing.T, inputString string, expected int, longStep bo
 		step = len(inputString) / 2
 	}
 	value := CalcCaptcha(inputString, step)
-	assert.Equal(t, expected, value, "Result does not match expected.")
+    assert.Equal(t, expected, value, "Result does not match expected.")
 }
 
 func TestSingleSteps(t *testing.T) {

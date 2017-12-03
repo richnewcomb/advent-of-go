@@ -1,9 +1,9 @@
 package advent
 
 import (
-	"fmt"
-	"testing"
-	"github.com/stretchr/testify/assert"
+    "fmt"
+    "testing"
+    "github.com/stretchr/testify/assert"
 )
 
 func TestDiffLargeSmallRows(t *testing.T) {
