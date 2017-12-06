@@ -9,7 +9,7 @@ import (
 )
 
 // Read and return all of the records in a file
-func ReadTsvRecords(filename string) [][]string {
+func ReadTsvRecordsWithDelimiter(filename string, delimiter rune) [][]string {
     absPath, _ := filepath.Abs(filename)
     file, err := os.Open(absPath)
     if err != nil {
@@ -20,13 +20,17 @@ func ReadTsvRecords(filename string) [][]string {
 
     reader := csv.NewReader(file)
     //Configure reader options Ref http://golang.org/src/pkg/encoding/csv/reader.go?s=#L81
-    reader.Comma = '\t'           // Use tab-delimited instead of comma
+    reader.Comma = delimiter           // Use tab-delimited instead of comma
     reader.Comment = '#'          //Comment character
     reader.FieldsPerRecord = -1   //Number of records per record. Set to Negative value for variable
     reader.TrimLeadingSpace = true
 
     records, err := reader.ReadAll()
     return records
+}
+
+func ReadTsvRecords(filename string) [][]string {
+    return ReadTsvRecordsWithDelimiter(filename, '\t')
 }
 
 // Convert [][]string into [][]int to eliminate string to int conversions elsewhere
