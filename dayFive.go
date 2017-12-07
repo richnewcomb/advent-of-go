@@ -13,10 +13,10 @@ func EscapeMaze(filename string) int {
         instructionList[i] = records[i][0]
     }
 
-    done := 1
+    done := 0
     steps := 0
-    pos := 0;
-    for done < 2 {
+    pos := 0
+    for done < 1 {
         currentVal := instructionList[pos]
         nextPos := pos + currentVal
         if (currentVal >= 3) {
